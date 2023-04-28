@@ -4,7 +4,10 @@
   "description": "Source code for respont sdk. Respont is fully decentralized app for secure communication for each people.",
   "main": "index.js",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "test": "jest && jest-it-up",
+    "test:watch": "jest --watch"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/therespont/sdk.git"
