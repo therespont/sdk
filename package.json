@@ -1,0 +1,24 @@
+{
+  "name": "@respont/app",
+  "version": "1.0.0-alpha.1",
+  "description": "Source code for respont sdk. Respont is fully decentralized app for secure communication for each people.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/therespont/sdk.git"
+  },
+  "author": "Ilham Maulana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/therespont/sdk/issues"
+  },
+  "homepage": "https://github.com/therespont/sdk#readme",
+  "dependencies": {
+    "ethers": "^5.7.2"
+  },
+  "devDependencies": {}
+}

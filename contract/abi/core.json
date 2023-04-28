@@ -1,0 +1,330 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "_Owner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "_BlockedAddress",
+        "type": "address"
+      }
+    ],
+    "name": "BlockListAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "_Owner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "_BlockedAddress",
+        "type": "address"
+      }
+    ],
+    "name": "BlockListRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "_Address",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "string",
+        "name": "_MediaLink",
+        "type": "string"
+      }
+    ],
+    "name": "PictureChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "_Owner",
+        "type": "address"
+      }
+    ],
+    "name": "ProfileCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "_Sender",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "_Receiver",
+        "type": "address"
+      }
+    ],
+    "name": "Sent",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_Opponent",
+        "type": "address"
+      }
+    ],
+    "name": "AddBlockList",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_MediaLink",
+        "type": "string"
+      }
+    ],
+    "name": "ChangePicture",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_Owner",
+        "type": "address"
+      }
+    ],
+    "name": "CreateProfile",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_Text",
+        "type": "string"
+      }
+    ],
+    "name": "GenerateText",
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "GetBlockList",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_Opponent",
+        "type": "address"
+      }
+    ],
+    "name": "GetPicture",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_Opponent",
+        "type": "address"
+      }
+    ],
+    "name": "Message",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "FromAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "ToAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "MessageText",
+            "type": "string"
+          },
+          {
+            "internalType": "string[]",
+            "name": "MediaLink",
+            "type": "string[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "MessageTimestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "BlockHeight",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct User.MessageStruct[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "Opponents",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "Opponent",
+            "type": "address"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "FromAddress",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "ToAddress",
+                "type": "address"
+              },
+              {
+                "internalType": "string",
+                "name": "MessageText",
+                "type": "string"
+              },
+              {
+                "internalType": "string[]",
+                "name": "MediaLink",
+                "type": "string[]"
+              },
+              {
+                "internalType": "uint256",
+                "name": "MessageTimestamp",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "BlockHeight",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct User.MessageStruct",
+            "name": "Messages",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct User.OpponentStruct[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_Opponent",
+        "type": "address"
+      }
+    ],
+    "name": "RemoveBlockList",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_ToAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_MessageText",
+        "type": "bytes"
+      },
+      {
+        "internalType": "string[]",
+        "name": "_MediaLink",
+        "type": "string[]"
+      }
+    ],
+    "name": "SendMessage",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
