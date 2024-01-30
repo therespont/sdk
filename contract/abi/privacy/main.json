@@ -1,0 +1,50 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_Key",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "_AddressPair",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes",
+        "name": "_IssuerKey",
+        "type": "bytes"
+      }
+    ],
+    "name": "GenerateKeyLocation",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_AddressPair",
+        "type": "address"
+      }
+    ],
+    "name": "GetKeyLocation",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

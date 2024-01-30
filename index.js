@@ -1,5 +1,5 @@
-import * as Respont from "./src/Connection.js";
-import Listeners from "./src/Listeners.js";
-import Transactions from "./src/Transactions.js";
+import Connect from "./src/Connection.js";
+import Listen from "./src/Listeners.js";
+import Interactions from "./src/Interactions.js";
 
-export { Respont, Listeners, Transactions };
+export { Connect, Listen, Interactions };

@@ -120,38 +120,6 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_Owner",
-        "type": "address"
-      }
-    ],
-    "name": "CreateProfile",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "_Text",
-        "type": "string"
-      }
-    ],
-    "name": "GenerateText",
-    "outputs": [
-      {
-        "internalType": "bytes",
-        "name": "",
-        "type": "bytes"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "GetBlockList",
     "outputs": [
@@ -206,14 +174,14 @@
             "type": "address"
           },
           {
-            "internalType": "string",
+            "internalType": "bytes",
             "name": "MessageText",
-            "type": "string"
+            "type": "bytes"
           },
           {
-            "internalType": "string[]",
+            "internalType": "bytes",
             "name": "MediaLink",
-            "type": "string[]"
+            "type": "bytes"
           },
           {
             "internalType": "uint256",
@@ -224,9 +192,14 @@
             "internalType": "uint256",
             "name": "BlockHeight",
             "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "KeyLocation",
+            "type": "address"
           }
         ],
-        "internalType": "struct User.MessageStruct[]",
+        "internalType": "struct Main.MessageStruct[]",
         "name": "",
         "type": "tuple[]"
       }
@@ -258,14 +231,14 @@
                 "type": "address"
               },
               {
-                "internalType": "string",
+                "internalType": "bytes",
                 "name": "MessageText",
-                "type": "string"
+                "type": "bytes"
               },
               {
-                "internalType": "string[]",
+                "internalType": "bytes",
                 "name": "MediaLink",
-                "type": "string[]"
+                "type": "bytes"
               },
               {
                 "internalType": "uint256",
@@ -276,14 +249,19 @@
                 "internalType": "uint256",
                 "name": "BlockHeight",
                 "type": "uint256"
+              },
+              {
+                "internalType": "address",
+                "name": "KeyLocation",
+                "type": "address"
               }
             ],
-            "internalType": "struct User.MessageStruct",
+            "internalType": "struct Main.MessageStruct",
             "name": "Messages",
             "type": "tuple"
           }
         ],
-        "internalType": "struct User.OpponentStruct[]",
+        "internalType": "struct Main.OpponentStruct[]",
         "name": "",
         "type": "tuple[]"
       }
@@ -317,9 +295,14 @@
         "type": "bytes"
       },
       {
-        "internalType": "string[]",
+        "internalType": "bytes",
         "name": "_MediaLink",
-        "type": "string[]"
+        "type": "bytes"
+      },
+      {
+        "internalType": "address",
+        "name": "_KeyLocation",
+        "type": "address"
       }
     ],
     "name": "SendMessage",
