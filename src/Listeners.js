@@ -1,52 +1,35 @@
 import { EventEmitter } from "events";
+import { ethers } from "ethers";
 
-class Listeners {
-  constructor(provider, listen = []) {
-    this._listeners = {
-      listener: new EventEmitter(),
-      provider: function (eventName, isListen = true) {
-        if (isListen)
-          provider._ethers.on(eventName, (...data) => {
-            this.listener.emit(eventName, ...data);
-          });
-        else provider._ethers.removeListener(eventName);
-      },
-      ethereum: function (eventName, isListen = true) {
-        if (isListen)
-          provider._ethereum.on(eventName, (...data) => {
-            this.listener.emit(eventName, ...data);
-          });
-        else provider._ethereum.removeListener(eventName);
-      },
-      contract: function (eventName, isListen = true) {
-        if (isListen)
-          provider._contract.on(eventName, (...data) => {
-            this.listener.emit(eventName, ...data);
-          });
-        else provider._contract.removeListener(eventName);
-      },
-    };
+import * as Respont from "../contants/index.js";
 
-    listen.forEach((events) => {
-      if (
-        (events.type.toLowerCase() === "provider" ||
-          events.type.toLowerCase() === "contract" ||
-          events.type.toLowerCase() === "ethereum") &&
-        events.name
-      ) {
-        if (events.type === "provider") this._listeners.provider(events.name);
-        else if (events.type === "contract")
-          this._listeners.contract(events.name);
-        else this._listeners.ethereum(events.name);
-      } else {
-        throw new Error(
-          "unsupportedEventType: Only 'provider', 'contract', or 'ethereum' type is accepted"
-        );
-      }
+class Listen {
+  constructor(respont) {
+    this._listeners = new EventEmitter();
+
+    const contractEvents = [
+      "PictureChanged",
+      "Sent",
+      "BlockListAdded",
+      "BlockListRemoved",
+    ];
+
+    const chainEvents = ["block"];
+
+    contractEvents.forEach((eventName) => {
+      respont._contract.storage.on(eventName, (...data) => {
+        this._listeners.emit(eventName, { eventName, ...data });
+      });
+    });
+
+    chainEvents.forEach((eventName) => {
+      respont._providers.storage.on(eventName, (...data) => {
+        this._listeners.emit(eventName, { eventName, ...data });
+      });
     });
 
     return this._listeners;
   }
 }
 
-export default Listeners;
+export default Listen;
