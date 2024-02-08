@@ -101,6 +101,62 @@
         "type": "address"
       }
     ],
+    "name": "AMessage",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "FromAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "ToAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes",
+            "name": "MessageText",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes",
+            "name": "MediaLink",
+            "type": "bytes"
+          },
+          {
+            "internalType": "uint256",
+            "name": "MessageTimestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "BlockHeight",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "KeyLocation",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct Main.MessageStruct",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_Opponent",
+        "type": "address"
+      }
+    ],
     "name": "AddBlockList",
     "outputs": [],
     "stateMutability": "nonpayable",
@@ -157,6 +213,16 @@
         "internalType": "address",
         "name": "_Opponent",
         "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_BeforeHeight",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_Limit",
+        "type": "uint256"
       }
     ],
     "name": "Message",
@@ -208,7 +274,18 @@
     "type": "function"
   },
   {
-    "inputs": [],
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_BeforeHeight",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_Limit",
+        "type": "uint256"
+      }
+    ],
     "name": "Opponents",
     "outputs": [
       {
