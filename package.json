@@ -1,6 +1,6 @@
 {
   "name": "@respont/app",
-  "version": "2.0.2-alpha.1",
+  "version": "2.0.3-alpha.1",
   "description": "Source code for respont sdk. Respont is fully decentralized app for secure communication for each people.",
   "main": "./lib/cjs/index.js",
   "module": "./lib/mjs/index.js",
